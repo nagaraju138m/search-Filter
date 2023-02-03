@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="try">
+    </div>
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Hero Name</th>
+        <th>Country</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of Employees| filter:searchText ">
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}}</td>
+        <td>{{hero.country}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
